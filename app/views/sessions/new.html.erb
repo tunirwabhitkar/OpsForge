@@ -1,0 +1,23 @@
+<h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Sign in to OpsForge</h2>
+
+<% if alert.present? %>
+  <div class="mb-4 p-3 bg-red-50 text-red-700 text-sm rounded-md"><%= alert %></div>
+<% end %>
+
+<%= form_with url: session_path, local: true, class: "space-y-4" do |f| %>
+  <div>
+    <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+    <%= f.email_field :email, required: true, class: "mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500" %>
+  </div>
+  <div>
+    <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+    <%= f.password_field :password, required: true, class: "mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-indigo-500 focus:border-indigo-500" %>
+  </div>
+  <div>
+    <%= f.submit "Sign in", class: "w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 text-sm" %>
+  </div>
+<% end %>
+
+<div class="mt-4 text-center text-sm text-gray-600">
+  Don't have an account? <%= link_to "Sign up", new_registration_path, class: "text-indigo-600 hover:underline font-medium" %>
+</div>

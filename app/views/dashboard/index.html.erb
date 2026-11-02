@@ -1,0 +1,18 @@
+<div class="space-y-6">
+  <h1 class="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+      <div class="text-sm font-medium text-gray-500">CRM Companies</div>
+      <div class="mt-2 text-3xl font-bold text-gray-900"><%= @companies_count %></div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+      <div class="text-sm font-medium text-gray-500">Open Deals Pipeline</div>
+      <div class="mt-2 text-3xl font-bold text-gray-900">$<%= number_with_delimiter(@open_deals_value) %></div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+      <div class="text-sm font-medium text-gray-500">Open Support Tickets</div>
+      <div class="mt-2 text-3xl font-bold text-gray-900"><%= @open_tickets_count %></div>
+    </div>
+  </div>
+</div>
